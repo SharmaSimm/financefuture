@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial Health Questionnaire - FinanceFuture</title>
+</head>
+<body>
+    <h1>Financial Health Questionnaire</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'dashboard' %}">Go to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - FinanceFuture</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    {% if financial_health %}
+        <p><strong>Income:</strong> {{ financial_health.income }}</p>
+        <p><strong>Expenses:</strong> {{ financial_health.expenses }}</p>
+        <p><strong>Savings:</strong> {{ financial_health.savings }}</p>
+        <p><strong>Financial Goals:</strong> {{ financial_health.financial_goals }}</p>
+        <p><strong>Score:</strong> {{ financial_health.score }}</p>
+        <h2>Insights:</h2>
+        <ul>
+            <li>Income to Expense Ratio: {{ insights.income_to_expense_ratio|floatformat:2 }}%</li>
+            <li>Savings Percentage: {{ insights.savings_percentage|floatformat:2 }}%</li>
+        </ul>
+    {% else %}
+        <p>No financial health data available. <a href="{% url 'financial_health_questionnaire' %}">Add your financial data</a>.</p>
+    {% endif %}
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

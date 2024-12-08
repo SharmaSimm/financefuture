@@ -1,0 +1,15 @@
+<h1>Community Benchmarking</h1>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Your Value</th>
+        <th>Average Value</th>
+    </tr>
+    {% for benchmark in benchmarks %}
+    <tr>
+        <td>{{ benchmark.category }}</td>
+        <td>{{ benchmark.value }}</td>
+        <td>{{ benchmark.average_value }}</td> <!-- This can be calculated dynamically -->
+    </tr>
+    {% endfor %}
+</table>

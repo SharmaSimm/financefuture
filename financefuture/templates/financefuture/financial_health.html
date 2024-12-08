@@ -1,0 +1,19 @@
+<!-- financefuture/templates/financefuture/financial_health.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Health</title>
+</head>
+<body>
+    <h1>Financial Health</h1>
+    {% if financial_health %}
+        <p><strong>Score:</strong> {{ financial_health.score }}</p>
+        <p><strong>Assessment Date:</strong> {{ financial_health.assessment_date }}</p>
+        <p><strong>Recommendations:</strong> {{ financial_health.recommendations }}</p>
+    {% else %}
+        <p>No financial health data available for this user.</p>
+    {% endif %}
+</body>
+</html>
